@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Logger 
+namespace Logger
 {
     class ConsoleLogger : ILogger
     {
@@ -12,6 +10,6 @@ namespace Logger
 
         public void Warning(string message) => Console.WriteLine($"Warn: {message}");
 
-        public void Info(string message) => Console.WriteLine($"Info: {message}");       
+        public void Info(string message) => Console.WriteLine($"Info: {message}");
     }
 }

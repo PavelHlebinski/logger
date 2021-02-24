@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Logger
 {
-    public interface ILogger 
+    public interface ILogger
     {
         void Error(string message);
         void Error(Exception ex);

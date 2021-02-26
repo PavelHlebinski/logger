@@ -2,7 +2,8 @@
 {
     public static class LoggerFactory
     {
-        public static ILogger GetConsoleLogger() => new ConsoleLogger();
-        public static ILogger GetFileLogger() => new FileLogger();
+        public static ILogger GetLogger() => new ConsoleLogger();
+
+        public static ILogger GetLogger(string path, string name) => new FileLogger(path, name);
     }
 }

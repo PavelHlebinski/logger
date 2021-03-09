@@ -20,7 +20,10 @@ namespace Logger
                 using var streamWriter = new StreamWriter(fileStream);
                 streamWriter.WriteLine(message);
             }
-            catch {}
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message} \n {ex.StackTrace}");
+            }
         }
 
         public void Error(string message) => WriteToFile($"Error: {message}");

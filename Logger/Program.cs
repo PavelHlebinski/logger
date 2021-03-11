@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Logger.Interfases;
+using Logger.Proxy;
+using System;
 
 namespace Logger
 {
@@ -6,8 +8,13 @@ namespace Logger
     {
         static void Main(string[] args)
         {
-            var logger = LoggerFactory.GetLogger(Environment.CurrentDirectory + "\\..\\..\\..\\", "log.txt");
-            logger.Error("sdfs");
+            var loggingProxy = new LoggingProxy<IObject>();
+            var obj = loggingProxy.CreateInstance(() => new ProxyServer(new GetType(), LoggerFactory.GetLogger()));
+
+            obj.GetObjectType(10);
+            obj.GetObjectType('s');
+            obj.GetObjectType("asdasd");
+            Console.ReadKey();
         }
     }
 }
